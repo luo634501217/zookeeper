@@ -1,4 +1,4 @@
-package com.concurrent.test;
+package com.forkJoin.test;
 
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.Future;

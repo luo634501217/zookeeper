@@ -2,7 +2,7 @@ package com.concurrent.test;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class TestConcurrent {
+public class VisibleTest {
 	private static boolean ready = false;
 	private static String readyStr = "不可见ready";
 
