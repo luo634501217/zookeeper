@@ -9,7 +9,17 @@
             <groupId>org.apache.zookeeper</groupId>
             <artifactId>zookeeper</artifactId>
             <version>3.4.5</version>
-        </dependency>
+            <exclusions>
+            	<exclusion>
+            		<artifactId>jmxri</artifactId>
+            		<groupId>com.sun.jmx</groupId>
+            	</exclusion>
+            	<exclusion>
+            		<artifactId>jmxtools</artifactId>
+            		<groupId>com.sun.jdmk</groupId>
+            	</exclusion>
+            </exclusions>
+          </dependency>
         
        <dependency>  
         <groupId>org.apache.curator</groupId>  

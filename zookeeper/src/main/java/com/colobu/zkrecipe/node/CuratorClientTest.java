@@ -22,7 +22,7 @@ import org.apache.curator.retry.RetryNTimes;
 public class CuratorClientTest {
 
     /** Zookeeper info */
-    private static final String ZK_ADDRESS = "192.168.0.23:2181";
+    private static final String ZK_ADDRESS = "127.0.0.1:2181";
     private static final String ZK_PATH = "/zktest";
 
     public static void main(String[] args) throws Exception {

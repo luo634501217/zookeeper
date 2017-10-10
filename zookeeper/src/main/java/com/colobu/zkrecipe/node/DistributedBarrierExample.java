@@ -9,15 +9,14 @@ import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.framework.recipes.barriers.DistributedBarrier;
 import org.apache.curator.retry.ExponentialBackoffRetry;
-import org.apache.curator.test.TestingServer;
 
 public class DistributedBarrierExample {
     private static final int QTY = 5;
     private static final String PATH = "/examples/barrier";
 
     public static void main(String[] args) throws Exception {
-        try (TestingServer server = new TestingServer()) {
-            CuratorFramework client = CuratorFrameworkFactory.newClient(server.getConnectString(), new ExponentialBackoffRetry(1000, 3));
+        try {
+            CuratorFramework client = CuratorFrameworkFactory.newClient("127.0.0.1:2181", new ExponentialBackoffRetry(1000, 3));
             client.start();
 
             ExecutorService service = Executors.newFixedThreadPool(QTY);
@@ -50,8 +49,11 @@ public class DistributedBarrierExample {
 
             service.shutdown();
             service.awaitTermination(10, TimeUnit.MINUTES);
-
         }
+		finally {
+			
+		}
+        
 
     }
 
